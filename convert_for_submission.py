@@ -23,8 +23,10 @@ ROOT_PATH = {
 PATH_SUB = "./submission" 
 
 def integrate_file(n: str) -> None:
-    num_code = "".join(filter(lambda x: "from lib import" not in x, open(f"{ROOT_PATH[n]}/{n}.py").readlines()))
-    lib_code = open(f"{ROOT_PATH[n]}/lib.py").read()
+    with open(f"{ROOT_PATH[n]}/{n}.py", encoding="utf-8") as f:
+        num_code = "".join(filter(lambda x: "from lib import" not in x, f.readlines()))
+    with open(f"{ROOT_PATH[n]}/lib.py", encoding="utf-8") as f:
+        lib_code = f.read()
     integrated_code = lib_code + "\n\n\n" + num_code
 
     if n == "1629": # 1629는 lib code 통합 제외

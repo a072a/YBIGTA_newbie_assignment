@@ -17,7 +17,11 @@ def simulate_card_game(n: int) -> int:
     맨 위 카드를 버리고, 그 다음 카드를 맨 아래로 이동
     """
     # 구현하세요!
-    pass
+    queue = create_circular_queue(n)
+    while len(queue) >1:
+        queue.popleft()
+        queue.append(queue.popleft())
+    return queue[0]
 
 def solve_card2() -> None:
     """입, 출력 format"""
