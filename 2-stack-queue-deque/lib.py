@@ -14,7 +14,13 @@ def create_circular_queue(n: int) -> deque[int]:
 
 def rotate_and_remove(queue: deque[int], k: int) -> int:
     """
-    큐에서 k번째 원소를 제거하고 반환합니다.
+    큐를 왼쪽으로 회전한 뒤, k번째 원소를 제거하여 반환
+
+    Args:
+        - queue(deque[int]): 정수로 구성된 deque
+        - k (int): 제거할 원소의 순서
+    Returns:
+        - int: 제거된 원소의 값
     """
     # 구현하세요!
     queue.rotate(-(k-1))

@@ -36,8 +36,12 @@ TODO:
 
 def simulate_card_game(n: int) -> int:
     """
-    카드2 문제의 시뮬레이션
-    맨 위 카드를 버리고, 그 다음 카드를 맨 아래로 이동
+    카드2 문제를 시뮬레이션하여 마지막으로 남는 카드를 반환
+    
+    Args:
+        - n (int): 카드의 개수
+    Returns:
+        - int: 마지막으로 남은 카드 번호
     """
     # 구현하세요!
     queue = create_circular_queue(n)

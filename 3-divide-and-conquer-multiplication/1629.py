@@ -10,8 +10,14 @@ TODO:
 
 def fast_power(base: int, exp: int, mod: int) -> int:
     """
-    빠른 거듭제곱 알고리즘 구현
-    분할 정복을 이용, 시간복잡도 고민!
+    분할 정복 알고리즘을 이용하여 거듭제곱된 수의 나머지를 빠르게 계산
+    
+    Args:
+        - base (int): 밑
+        - exp (int): 지수
+        - mod (int): 나머지를 계산할 수
+    Returns:
+        - int: % mod의 결과(나머지) 
     """
     # 구현하세요!
     if exp == 0:

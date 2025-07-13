@@ -13,8 +13,13 @@ TODO:
 
 def josephus_problem(n: int, k: int) -> list[int]:
     """
-    요세푸스 문제 해결
-    n명 중 k번째마다 제거하는 순서를 반환
+    요세푸스 문제를 시뮬레이션하여 제거되는 사람들의 순서를 반환
+
+    Args:
+        - n (int): 원형으로 앉아 있는 사람의 수
+        - k (int): k번째 사람을 제거
+    Returns:
+        - list[int]:제거된 사람의 번호 순서를 담은 리스트
     """
     # 구현하세요!
     queue = create_circular_queue(n)

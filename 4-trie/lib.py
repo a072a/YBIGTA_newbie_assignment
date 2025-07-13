@@ -26,11 +26,28 @@ class Trie(list[TrieNode[T]]):
 
     def push(self, seq: Iterable[T]) -> None:
         """
-        seq: T의 열 (list[int]일 수도 있고 str일 수도 있고 등등...)
-
         action: trie에 seq을 저장하기
+        Args: 
+            -seq (Iterable[T]): T의 열
+
         """
         # 구현하세요!
-        pass
+        current = 0
+        for item in seq:
+            for child_idx in self[current].children:
+                if self[child_idx].body == item:
+                    current = child_idx
+                    break
+            else:
+                self.append(TrieNode(body=item))
+                new_idx = len(self) - 1
+                self[current].children.append(new_idx)
+                current = new_idx
+        self[current].is_end = True
 
     # 구현하세요!
+    def factorial(self, x: int) -> int:
+        result = 1
+        for i in range(2, x + 1):
+            result *=1
+        return result
