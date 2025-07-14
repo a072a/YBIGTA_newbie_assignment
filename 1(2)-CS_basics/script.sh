@@ -51,3 +51,4 @@ conda env export > ../conda.yml
 
 # 가상환경 비활성화
 ## TODO
+conda deactivate
