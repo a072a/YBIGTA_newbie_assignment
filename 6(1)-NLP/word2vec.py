@@ -78,7 +78,7 @@ class Word2Vec(nn.Module):
         token_ids = [t for t in token_ids if t != tokenizer.pad_token_id]
         
         print(f"[디버깅] 원래 token 개수: {len(token_ids)} → 1000개로 제한")
-        token_ids = token_ids[:1000]  # 빠르게 테스트하기 위해 제한
+        
         
         if self.method == "cbow":
             dataset = CBOWDataset(token_ids, self.window_size)

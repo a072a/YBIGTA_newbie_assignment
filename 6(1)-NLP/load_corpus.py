@@ -12,5 +12,5 @@ def load_corpus() -> list[str]:
             words = text.split(" ")
             corpus += words
     
-    corpus = corpus[:5000]
+    corpus = corpus[:7000]
     return corpus
