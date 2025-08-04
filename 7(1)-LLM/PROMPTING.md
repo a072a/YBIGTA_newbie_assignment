@@ -16,14 +16,14 @@
 ## 3. My Prompting이 CoT Prompting 보다 좋은 이유
 ### 기존 CoT 방식의 한계: 기존 CoT 방식은 모델이 문제 해결 과정을 거치긴 하지만, 중간과정에서 발생한 오류를 스스로 점검하지 못하는 한계가 있음.
 ### 이러한 CoT Prompting의 한계를 극복하기 위해 문제 해결 후 스스로 검토(Self-Verification)하는 절차를 포함한 새로운 프롬프트 방식을 구현함.
-### 사용된 프롬프트는 다음과 같은 5단계 접근을 모델에게 요구합니다:
+### 사용된 프롬프트는 다음과 같은 5단계 접근을 모델에게 요구:
 ### 1. READ CAREFULLY: 문제를 정확히 읽고 주어진 정보와 요구사항을 파악
 ### 2. PLAN: 문제를 논리적인 단계로 분해하고 계획 수립
 ### 3. SOLVE: 각 단계를 체계적으로 해결
 ### 4. VERIFY: 계산 결과를 다시 문제에 대입하며 검산
 ### 5. DOUBLE-CHECK: 최종 답변이 논리적으로 타당한지 최종 확인
 
-'''
+```python
 prompt = """Instruction:
 You are an expert mathematician. For each problem, follow this systematic approach:
 
@@ -37,7 +37,9 @@ Always end with: Final Answer: #### [number]
 
 Remember: If you make a mistake, identify it and correct it before giving the final answer.
 """
-'''
+```
+
+
 ### 이러한 방식은 단순히 추론하는 것을 넘어, 모델이 스스로의 논리를 점검하도록 유도함으로써 성능을 향상시킴
 ### 실제로 정확도를 비교해보면 아래와 같은 결과로 CoT에 자기검토를 추가하면 더 좋은 성능을 보이는 것을 알 수 있음.
 ### CoT Prompting (0-shot): 0.74 → My Prompting (0-shot): 0.76
