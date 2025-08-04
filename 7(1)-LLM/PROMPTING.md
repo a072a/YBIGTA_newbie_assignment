@@ -45,7 +45,10 @@ Remember: If you make a mistake, identify it and correct it before giving the fi
 
 이러한 방식은 단순히 추론하는 것을 넘어, 모델이 스스로의 논리를 점검하도록 유도함으로써 성능을 향상시켰습니다.
 실제로 정확도를 비교해보면 아래와 같은 결과로 CoT에 자기검토를 추가하면 더 좋은 성능을 보이는 것을 알 수 있습니다.
+
 CoT Prompting (0-shot): 0.74 → My Prompting (0-shot): 0.76
+
 CoT Prompting (3-shot): 0.60 → My Prompting (3-shot): 0.70
+
 CoT Prompting (5-shot): 0.66 → My Prompting (5-shot): 0.72
 
